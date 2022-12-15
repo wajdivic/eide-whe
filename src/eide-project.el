@@ -149,105 +149,132 @@
 ;; CUSTOMIZATION VARIABLES
 ;; ----------------------------------------------------------------------------
 
-(defcustom eide-custom-number-of-workspaces 2 "Number of workspaces (each workspace has got its own list of projects)."
+(defcustom eide-custom-number-of-workspaces 2
+  "Number of workspaces (each workspace has got its own list of projects)."
   :tag "Number of workspaces"
   :type '(choice (const 1) (const 2) (const 3) (const 4) (const 5) (const 6) (const 7) (const 8))
   :set 'eide-i-project-custom-set-number-of-workspaces
   :initialize 'custom-initialize-default
   :group 'eide-project)
-(defcustom eide-custom-support-ansi-escape-code-in-compilation-buffer t "Support ANSI escape code in compilation buffer."
+(defcustom eide-custom-support-ansi-escape-code-in-compilation-buffer t
+  "Support ANSI escape code in compilation buffer."
   :tag "Support ANSI escape code in compilation buffer"
   :type '(choice (const :tag "No" nil)
                  (const :tag "Yes" t))
   :set 'eide-i-project-set-support-for-ansi-escape-code-in-compilation-buffer
   :initialize 'custom-initialize-default
   :group 'eide-project)
-(defcustom eide-custom-project-default-c-style "" "Default C style."
+(defcustom eide-custom-project-default-c-style ""
+  "Default C style."
   :tag "Default C style"
   :type 'string
   :set '(lambda (param value) (set-default param value))
   :group 'eide-project)
-(defcustom eide-custom-project-default-init-command "" "This command is called before all 'compile' and 'run' commands."
+(defcustom eide-custom-project-default-init-command ""
+  "This command is called before all 'compile' and 'run' commands."
   :tag "Default init command"
   :type 'string
   :set '(lambda (param value) (set-default param value))
   :group 'eide-project)
-(defcustom eide-custom-project-default-compile-command-1 "" "Default compile command (1)."
+(defcustom eide-custom-project-default-compile-command-1 ""
+  "Default compile command (1)."
   :tag "Default compile command (1)"
   :type 'string
   :set '(lambda (param value) (set-default param value))
   :group 'eide-project)
-(defcustom eide-custom-project-default-compile-command-2 "" "Default compile command (2)."
+(defcustom eide-custom-project-default-compile-command-2 ""
+  "Default compile command (2)."
   :tag "Default compile command (2)"
   :type 'string
   :set '(lambda (param value) (set-default param value))
   :group 'eide-project)
-(defcustom eide-custom-project-default-compile-command-3 "" "Default compile command (3)."
+(defcustom eide-custom-project-default-compile-command-3 ""
+  "Default compile command (3)."
   :tag "Default compile command (3)"
   :type 'string
   :set '(lambda (param value) (set-default param value))
   :group 'eide-project)
-(defcustom eide-custom-project-default-compile-command-4 "" "Default compile command (4)."
+(defcustom eide-custom-project-default-compile-command-4 ""
+  "Default compile command (4)."
   :tag "Default compile command (4)"
   :type 'string
   :set '(lambda (param value) (set-default param value))
   :group 'eide-project)
-(defcustom eide-custom-project-default-run-command-1 "" "Default run command (1)."
+(defcustom eide-custom-project-default-run-command-1 ""
+  "Default run command (1)."
   :tag "Default run command (1)"
   :type 'string
   :set '(lambda (param value) (set-default param value))
   :group 'eide-project)
-(defcustom eide-custom-project-default-run-command-2 "" "Default run command (2)."
+(defcustom eide-custom-project-default-run-command-2 ""
+  "Default run command (2)."
   :tag "Default run command (2)"
   :type 'string
   :set '(lambda (param value) (set-default param value))
   :group 'eide-project)
-(defcustom eide-custom-project-default-debug-command "" "Default debug command."
+(defcustom eide-custom-project-default-debug-command ""
+  "Default debug command."
   :tag "Default debug command"
   :type 'string
   :set '(lambda (param value) (set-default param value))
   :group 'eide-project)
-(defcustom eide-custom-project-default-debug-program-1 "" "Default debug program (1)."
+(defcustom eide-custom-project-default-debug-program-1 ""
+  "Default debug program (1)."
   :tag "Default debug program (1)"
   :type 'string
   :set '(lambda (param value) (set-default param value))
   :group 'eide-project)
-(defcustom eide-custom-project-default-debug-program-2 "" "Default debug program (2)."
+(defcustom eide-custom-project-default-debug-program-2 ""
+  "Default debug program (2)."
   :tag "Default debug program (2)"
   :type 'string
   :set '(lambda (param value) (set-default param value))
   :group 'eide-project)
-(defcustom eide-custom-project-default-compile-error-old-path-regexp "" "Default compile error old path regexp (used to modify the path of filenames in the compilation buffer)."
+(defcustom eide-custom-project-default-compile-error-old-path-regexp ""
+  "Default compile error old path regexp (used to modify the path of filenames in
+the compilation buffer)."
   :tag "Default compile error old path regexp"
   :type 'string
   :set '(lambda (param value) (set-default param value))
   :group 'eide-project)
-(defcustom eide-custom-project-default-compile-error-new-path-string "" "Default compile error new path string (used to modify the path of filenames in the compilation buffer)."
+(defcustom eide-custom-project-default-compile-error-new-path-string ""
+  "Default compile error new path string (used to modify the path of filenames in
+the compilation buffer)."
   :tag "Default compile error new path string"
   :type 'string
   :set '(lambda (param value) (set-default param value))
   :group 'eide-project)
-(defcustom eide-custom-project-default-tags-exclude "" "Default space separated list of patterns (files or directories) to exclude when creating tags."
+(defcustom eide-custom-project-default-tags-exclude ""
+  "Default space separated list of patterns (files or directories) to exclude when
+creating tags."
   :tag "Default tags exclude patterns"
   :type 'string
   :set '(lambda (param value) (set-default param value))
   :group 'eide-project)
-(defcustom eide-custom-project-default-cscope-exclude-files "" "Default space separated list of files patterns to exclude when creating cscope list of files."
+(defcustom eide-custom-project-default-cscope-exclude-files ""
+  "Default space separated list of files patterns to exclude when creating cscope
+list of files."
   :tag "Default cscope exclude files patterns"
   :type 'string
   :set '(lambda (param value) (set-default param value))
   :group 'eide-project)
-(defcustom eide-custom-project-default-cscope-exclude-dirs "" "Default space separated list of directories patterns to exclude when creating cscope list of files."
+(defcustom eide-custom-project-default-cscope-exclude-dirs ""
+  "Default space separated list of directories patterns to exclude when creating
+cscope list of files."
   :tag "Default cscope exclude directories patterns"
   :type 'string
   :set '(lambda (param value) (set-default param value))
   :group 'eide-project)
-(defcustom eide-custom-project-default-grep-exclude-files "" "Default space separated list of files patterns to exclude when searching with grep."
+(defcustom eide-custom-project-default-grep-exclude-files ""
+  "Default space separated list of files patterns to exclude when searching with
+grep."
   :tag "Default grep exclude files patterns"
   :type 'string
   :set '(lambda (param value) (set-default param value))
   :group 'eide-project)
-(defcustom eide-custom-project-default-grep-exclude-dirs "" "Default space separated list of directories patterns to exclude when searching with grep."
+(defcustom eide-custom-project-default-grep-exclude-dirs ""
+  "Default space separated list of directories patterns to exclude when searching
+with grep."
   :tag "Default grep exclude directories patterns"
   :type 'string
   :set '(lambda (param value) (set-default param value))
@@ -345,21 +372,23 @@ Argument:
         (setq eide-project-current-workspace p-workspace-number)
         ;; Change projects list file
         (setq eide-project-projects-file (concat "~/.emacs.d/eide/workspace" (number-to-string p-workspace-number) "/projects-list"))
-        ;; Restore initial root directory
-        (setq eide-project-name nil)
-        (setq eide-project-config-buffer nil)
-        (setq eide-root-directory eide-root-directory-at-startup)
-        ;; Clear the project selected for comparison
-        (setq eide-compare-other-project-name nil)
-        (setq eide-compare-other-project-directory nil)
-        (unless eide-no-desktop-option
-          ;; Clear desktop (even if a project is defined)
-          (eide-windows-hide-ide-windows)
-          (desktop-save-mode -1)
-          ;; Close all buffers
-          (desktop-clear)
-          (eide-menu-update t)
-          (eide-windows-show-ide-windows))
+        ;; If a project is loaded, close it before switching to the new workspace
+        (when eide-project-name
+          ;; Restore initial root directory
+          (setq eide-project-name nil)
+          (setq eide-project-config-buffer nil)
+          (setq eide-root-directory eide-root-directory-at-startup)
+          ;; Clear the project selected for comparison
+          (setq eide-compare-other-project-name nil)
+          (setq eide-compare-other-project-directory nil)
+          (unless eide-no-desktop-option
+            ;; Clear desktop (even if a project is defined)
+            (eide-windows-hide-ide-windows)
+            (desktop-save-mode -1)
+            ;; Close all buffers
+            (desktop-clear)
+            (eide-menu-update t)
+            (eide-windows-show-ide-windows)))
         (eide-i-project-update-internal-projects-list)
         ;; Update default directory if current buffer is not visiting a file
         (unless buffer-file-name
@@ -633,6 +662,28 @@ Argument:
              (not (string-equal eide-project-c-style "")))
     (c-set-style eide-project-c-style)))
 
+(defun eide-i-project-switch-to-project-workspace ()
+  "If the project is present in a workspace, switch to this workspace."
+  (save-current-buffer
+    (let ((l-workspace-number 1))
+      (while (<= l-workspace-number eide-custom-number-of-workspaces)
+        ;; For every workspace, check if the project is present
+        (let ((l-projects-list-file (concat "~/.emacs.d/eide/workspace" (number-to-string l-workspace-number) "/projects-list"))
+              (l-projects-list-buffer nil))
+          (setq l-projects-list-buffer (find-file-noselect l-projects-list-file))
+          (with-current-buffer l-projects-list-buffer
+            (goto-char (point-min))
+            (if (re-search-forward (concat "^" eide-root-directory "$") nil t)
+                (progn
+                  ;; The project has been found in this workspace, let's switch to it
+                  (setq eide-project-current-workspace l-workspace-number)
+                  (setq eide-project-projects-file l-projects-list-file)
+                  (eide-i-project-update-internal-projects-list)
+                  ;; Stop searching, exit from the loop...
+                  (setq l-workspace-number (+ eide-custom-number-of-workspaces 1)))
+              (setq l-workspace-number (+ l-workspace-number 1))))
+          (kill-buffer l-projects-list-buffer))))))
+
 ;; ----------------------------------------------------------------------------
 ;; FUNCTIONS
 ;; ----------------------------------------------------------------------------
@@ -642,6 +693,7 @@ Argument:
   (add-hook 'desktop-after-read-hook 'eide-i-project-clean-desktop-hook)
   (when (and eide-open-project-at-startup
              (file-exists-p (concat eide-root-directory eide-project-config-file)))
+    (eide-i-project-switch-to-project-workspace)
     (eide-i-project-load t nil)
     ;; When Emacs-IDE is loaded from a file after init ("emacs -l file.el"),
     ;; the desktop is not read, because after-init-hook has already been called.
@@ -785,6 +837,7 @@ Argument:
         ;; Hide IDE windows in order to save their sizes
         ;; before desktop-clear closes them
         (eide-windows-hide-ide-windows)
+        (eide-i-project-switch-to-project-workspace)
         (eide-i-project-load nil nil)
         ;; Restore IDE windows
         (eide-windows-show-ide-windows)
